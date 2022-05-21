@@ -1,67 +1,23 @@
 import React from "react";
-import "./App.css";
+import Dashboard from "./components/Dashboard";
 
-import SearchBar from "./components/search-bar";
-import CurrentWeather from "./components/current-weather";
-import Forecast from "./components/forecast";
-
-import * as Api from "./api/weatherAPI";
-
-const FARENHEIT = "farehnheit";
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      location: "Chicago",
-      metric: FARENHEIT,
-      hourlyForecast: [],
-      current: "",
-    };
-
-    this.handleLocationChange = this.handleLocationChange.bind(this);
-    this.updateTemperature = this.updateTemperature.bind(this);
-
-    this.updateTemperature();
-  }
-
-  handleLocationChange(location) {
-    this.setState({ location });
-  }
-
-  async updateTemperature() {
-    const weatherRes = await Api.getWeatherBasedOnLocation(this.state.location);
-    const forecastRes = await Api.getForecast(
-      weatherRes.coord.lat,
-      weatherRes.coord.lon
-    );
-
-    this.setState({
-      current: forecastRes.current,
-      metric: FARENHEIT,
-      hourlyForecast: forecastRes.hourly,
-    });
-  }
-
-  render() {
-    const location = this.state.location;
-    const hourlyForecast = this.state.hourlyForecast;
-    const current = this.state.current;
-
+function App() {
+  if (
+    process.env.REACT_APP_API_KEY_APPID === undefined ||
+    process.env.REACT_APP_API_KEY_UNSPLASH === undefined
+  ) {
     return (
-      <div className="App">
-        <header className="App-header">
-          <SearchBar
-            searchValue={location}
-            onSearchChange={this.handleLocationChange}
-            onFormSubmit={this.updateTemperature}
-          />
-
-          {current && <CurrentWeather current={current} />}
-          {hourlyForecast.length > 0 && <Forecast forecast={hourlyForecast} />}
-        </header>
-      </div>
+      <h4>
+        Please add .env and add follow REACT_APP_API_KEY_APPID &
+        REACT_APP_API_KEY_UNSPLASH. Please read more README.md
+      </h4>
     );
   }
+  return (
+    <div className="App">
+      <Dashboard />
+    </div>
+  );
 }
 
 export default App;

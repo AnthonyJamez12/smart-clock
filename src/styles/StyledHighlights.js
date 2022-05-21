@@ -5,7 +5,7 @@ const StyledHighlights = styled.div`
        font-size:21px;
        font-weight:100;
        margin-top:30px;
-       font-family: "Averta-Regular";
+       font-family: "ui-sans-serif";
        color:${props => props.theme.textColor};
    }
    .highlights_inner{

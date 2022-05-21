@@ -26,8 +26,8 @@ const StyledHeader = styled.div`
             font-family: "Averta-Regular";
             background:${props => props.theme.bgTemp};
             border-radius:30px;
-            width:39px;
-            height:39px;
+            width:60px;
+            height:60px;
             color:${props => props.theme.bgTempText};
             justify-content: center;
             align-items: center;

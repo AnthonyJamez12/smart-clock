@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
 }
 body{
     font-size:20px;
-    font-family: "AvertaStd-Thin";
+    font-family: "ui-sans-serif";
     background:${props => props.theme.bgContent};
     margin:0;
     padding:0;

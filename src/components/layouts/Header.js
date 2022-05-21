@@ -13,8 +13,8 @@ const Header = ({ nightMode, nightModeCallback, showDaysCallback, showActive, un
     return (
         <StyledHeader>
             <div className="today-week">
-                <span className={`today ${showActive ? "active" : ""}`} onClick={() => enableToday(true)}>Today</span>
-                <span className={`week  ${showActive ? "" : "active"}`} onClick={() => enableToday(false)}>Week</span>
+                <span className={`today ${showActive ? "" : "active"}`} onClick={() => enableToday(false)}>Today</span>
+                <span className={`week  ${showActive ? "active" : ""}`} onClick={() => enableToday(true)}>Week</span>
             </div>
             <div className="temperature">
                 <div className={`celsius ${unitMode ? "" : "active"}`} onClick={() => changedTemp(false)}>

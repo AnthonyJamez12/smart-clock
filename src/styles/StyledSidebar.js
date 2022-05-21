@@ -87,12 +87,13 @@ const StyledSidebar = styled.div`
     
 .temperature{
     padding-bottom:30px;
-    font-size:75px;
+    font-size:125px;
     font-weight: 300;
+    font-family: 'ui-sans-serif';
     color:${props => props.theme.textColor};
     span{
         position: relative;
-        top: -17px;
+        top: -37px;
     }
     .degree{
         font-size: 40px;
@@ -100,7 +101,7 @@ const StyledSidebar = styled.div`
         font-weight: 700;
     }
     .unit{
-        top: -22px;
+        top: -40px;
         font-size: 35px;
         margin-left:-15px;
         font-weight: 900;

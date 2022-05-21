@@ -75,8 +75,8 @@ const Dashboard = () => {
                         nightMode={nightMode} showDaysCallback = {showDaysCallback} showActive = {showDays}/>
                     {loading || loadingLocation ? <SpinnerContainer />
                         : <>
-                            {!showDays ? (<Week data={weather.daily} tempUnit = {unitMode}/>) 
-                            : (<Today tempUnit = {unitMode} data = {weather.hourly} />) }
+                            {!showDays ?  (<Today tempUnit = {unitMode} data = {weather.hourly} />) 
+                            : (<Week data={weather.daily} tempUnit = {unitMode}/>)}
                             <Highlights data={weather.current} />
                         </>}
                 </Container>
